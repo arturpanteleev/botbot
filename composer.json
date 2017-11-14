@@ -1,0 +1,11 @@
+{
+    "require": {
+        "irazasyed/telegram-bot-sdk": "^2.0",
+        "symfony/dependency-injection": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "BotBot\\": "src"
+        }
+    }
+}
