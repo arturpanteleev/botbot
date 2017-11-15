@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
 include 'vendor/autoload.php';
-include 'config.php';
 
-$telegram = new Telegram\Bot\Api($CONFIG['token']);
+$telegram = new Telegram\Bot\Api();
 
 $telegram->addCommands([
     Telegram\Bot\Commands\HelpCommand::class,
