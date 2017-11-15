@@ -1,4 +1,4 @@
 <?php declare(strict_types=1);
 return [
-    'token' => 'YOUR_BOT_TOKEN' ?? getenv('BOT_TOKEN'),
+    'token' => 'YOUR_BOT_TOKEN' ?? getenv('TELEGRAM_BOT_TOKEN'),
 ];

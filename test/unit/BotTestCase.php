@@ -22,7 +22,7 @@ class BotTestCase extends TestCase
 
     public function setUp()
     {
-        $env = new Dotenv(__DIR__.'/../../');
+        $env = new Dotenv(__DIR__.'/../','.test_enviroment');
         $env->load();
         $this->api = new Api();
 
@@ -33,6 +33,10 @@ class BotTestCase extends TestCase
             QuoteCommand::class,
             StartCommand::class,
         ];
+
+        if (empty(getenv("TELEGRAM_BOT_TOKEN"))) {
+            $this->markTestSkipped('all tests in this file will be invactive for this server configuration! until u dont provider access key');
+        }
 
         $this->config = [
             'token' => 'test' ?? getenv('TELEGRAM_BOT_TOKEN'),
