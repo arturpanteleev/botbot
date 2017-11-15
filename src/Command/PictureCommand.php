@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace BotBot\Command;
 
@@ -7,22 +7,22 @@ use Telegram\Bot\Commands\Command;
 
 class PictureCommand extends Command
 {
-	/**
-	 * @var string Command Name
-	 */
-	protected $name = 'picture';
+    /**
+     * @var string Command Name
+     */
+    protected $name = 'picture';
 
-	/**
-	 * @var string Command Description
-	 */
-	protected $description = 'Генерирует рандомную картинку';
+    /**
+     * @var string Command Description
+     */
+    protected $description = 'Генерирует рандомную картинку';
 
-	public function handle($arguments)
-	{
-		$pictureService = new PictureService();
-		$this->replyWithPhoto([
-			'photo'   => $pictureService->getPicture(),
-			'caption' => 'Это картинка'
-		]);
-	}
+    public function handle($arguments)
+    {
+        $pictureService = new PictureService();
+        $this->replyWithPhoto([
+            'photo' => $pictureService->getPicture(),
+            'caption' => 'Это картинка',
+        ]);
+    }
 }
