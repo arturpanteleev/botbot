@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
 include 'vendor/autoload.php';
-
+$env = new \Dotenv\Dotenv(__DIR__);
+$env->load();
 $telegram = new Telegram\Bot\Api();
 
 $telegram->addCommands([

@@ -14,7 +14,7 @@ class BotBaseUsageTest extends BotTestCase
     public function testCanCreateInstance()
     {
         $this->assertInstanceOf(Api::class, $this->api);
-        $this->assertSame($this->config['token'], $this->api->getAccessToken());
+        $this->assertSame(getenv('TELEGRAM_BOT_TOKEN'), $this->api->getAccessToken());
     }
 
     public function testCanRegisterMultiplyCommand()
